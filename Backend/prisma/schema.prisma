@@ -1,0 +1,21 @@
+// Set up the database connection
+datasource db {
+  provider = "postgresql" // Change to your preferred database provider if not using PostgreSQL
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Define the User model
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  email     String   @unique
+  password  String
+  avatarUrl String?                               // Optional profile picture URL
+  resetToken String?                              // Token for password reset
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

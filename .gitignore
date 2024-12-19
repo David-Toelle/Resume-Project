@@ -1,0 +1,14 @@
+# Node modules
+node_modules/
+# Build and output directories
+dist/
+.next/
+out/
+# Environment files
+.env
+.env.local
+# Prisma-specific files
+prisma/.env
+# System files
+.DS_Store
+Thumbs.db
